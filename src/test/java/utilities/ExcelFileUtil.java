@@ -12,6 +12,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
+//used interface instead of class to make things simple and reuse code
 public class ExcelFileUtil {
 	Workbook wb;
 	//Constructor for reading excel path
