@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class FunctionLibrary {
 public static WebDriver driver;
@@ -103,5 +104,22 @@ public static void clickAction(WebDriver driver,String LocatorType, String Locat
 	}
 }
 
-//method for 
+//method for validating title
+public static void validateTitle(WebDriver driver,String Expected_Title)
+{
+	String Actual_Title=driver.getTitle();
+	try 
+	{
+		Assert.assertEquals(Expected_Title, Actual_Title,"Title is not matching");
+	}
+	catch(Throwable t)
+	{
+		System.out.println(t.getMessage());
+	}
+}
+//method to close the browser
+public static void closeBrowser(WebDriver driver)
+{
+	driver.close();
+}
 }
